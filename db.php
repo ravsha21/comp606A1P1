@@ -7,7 +7,3 @@ if (mysqli_connect_errno())
  echo "connected";
 }
 ?>
-<?php
-/*https://webdevtrick.com/login-system-php-mysql/
-https://webdevtrick.com/free-bootstrap-login-form-source-code/ */
-?>
