@@ -8,7 +8,12 @@
 <?php
 require('db.php');
 if (isset($_POST['fullname'])){
-	$first_name = stripslashes($_POST['first_name']);
+/*stripslashes() function removes backslashes added by the addslashes() 
+  mysqli_real_escape_string is used to stop SQL injection attack 
+  $_POST use to get data from form 
+  mysqli_query() function is used to execute SQL queries. */
+
+	$first_name = stripslashes($_POST['first_name']);   
 	$first_name = mysqli_real_escape_string($con,$first_name); 
 	$last_name = stripslashes($_POST['last_name']);
 	$last_name = mysqli_real_escape_string($con,$last_name);
@@ -38,8 +43,8 @@ if (isset($_POST['fullname'])){
 		<input type="text" class="login-input" name="fullname" placeholder="Fullname" required /><br>
 		<input type="radio" name="gender" value="male" checked> Male
   		<input type="radio" name="gender" value="female"> Female<br>
-    		<input type="text" class="login-input" name="email" placeholder="Email Adress"><br>
-    		<input type="password" class="login-input" name="password" placeholder="Password"><br>
+    		<input type="text" class="login-input" name="email" placeholder="Email Adress" required ><br>
+    		<input type="password" class="login-input" name="password" placeholder="Password" required ><br>
     		<input type="submit" name="submit" value="Register" class="login-button">
   		<p class="login-lost">Already Registered? <a href="login.php">Login Here</a></p>
   	</form>
