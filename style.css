@@ -1,0 +1,56 @@
+body{
+background-image:url(./images/bg_image.jpg);
+height: 700px; /* You must set a specified height */
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+}
+h1,h2,h3,p{
+font-color:#000000;
+}
+
+.registration_form {
+    margin: 100px auto;
+    width: 400px;
+    padding: 30px 25px;
+    background: darkseagreen;
+    border: 1px solid #ffffff;
+}
+.login_form {
+    margin: 185px auto;
+    width: 400px;
+    padding: 30px 25px;
+    background: darkseagreen;
+    border: 1px solid #ffffff;
+}
+ 
+h1.login-title {
+  color: #000000;
+  text-align:center;
+  font-size: 30px;
+  font-weight: 400; 
+}
+.login-field {
+    width: 350px;
+    height: 37px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+}
+
+ 
+.go-login
+{
+  text-align:center;
+  margin-bottom:0px;
+}
+ 
+.go-login a
+{
+  color:#666;
+  text-decoration:none;
+  font-size:13px;
+}
