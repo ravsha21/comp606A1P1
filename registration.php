@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-require('db.php');
+require('db_connect.php');
 if (isset($_POST['fullname'])){
 /*stripslashes() function removes backslashes added by the addslashes() 
   mysqli_real_escape_string is used to stop SQL injection attack 
