@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php
-require('db_connect.php');
-if (isset($_POST['fullname'])){
+require('db_connect.php');  // call database connection file
+if (isset($_POST['email'])){   //check if fullname is there
 /*stripslashes() function removes backslashes added by the addslashes() 
   mysqli_real_escape_string is used to stop SQL injection attack 
   $_POST use to get data from form 
@@ -27,28 +27,40 @@ if (isset($_POST['fullname'])){
 	$password = mysqli_real_escape_string($con,$password);
 	$start_date = date("Y-m-d H:i:s");
         $query = "INSERT into users(first_name,last_name,fullname,gender,email,password, start_date)VALUES('$first_name','$last_name','$fullname','$gender','$email','".md5($password)."', '$start_date')";
-        echo $query;
-        $result = mysqli_query($con,$query);
-        if($result){
+        //echo $query;  
+        //$results = mysqli_query($con, $query); 
+	$sql1 = "SELECT * FROM users WHERE email='$email'";
+        $result1 = mysqli_query($con, $sql1);
+        $email = mysqli_fetch_assoc($result1)['email'];
+        
+if($email != null){
+//echo $email;
+echo "<div class='form'>
+		<h3>Email already exist.Try again.</h3>
+		<br/>Click here to <a href='registration.php'>Register</a></div>";
+die();	
+}
+$result = mysqli_query($con,$query);   //send data to database
+        if($result){   //true if no error in data insertion
         	echo "<div class='form'>
 		<h3>You are registered successfully.</h3>
 		<br/>Click here to <a href='login.php'>Login</a></div>";
         }
     }else{
 ?>
-	<form class="login" action="" method="post">
+	<form class="registration_form" action="" method="post">
     		<h1 class="login-title">Register</h1>
-		<input type="text" class="login-input" name="first_name" placeholder="First Name" required /><br>
-		<input type="text" class="login-input" name="last_name" placeholder="Last Name" required /><br>
-		<input type="text" class="login-input" name="fullname" placeholder="Fullname" required /><br>
+		<input type="text" class="login-field" name="first_name" placeholder="First Name" required /><br>
+		<input type="text" class="login-field" name="last_name" placeholder="Last Name" required /><br>
+		<input type="text" class="login-field" name="fullname" placeholder="Fullname" required /><br>
 		<input type="radio" name="gender" value="male" checked> Male
-  		<input type="radio" name="gender" value="female"> Female<br>
-    		<input type="text" class="login-input" name="email" placeholder="Email Adress" required ><br>
-    		<input type="password" class="login-input" name="password" placeholder="Password" required ><br>
+  		<input type="radio" name="gender" value="female"> Female<br><br>
+    		<input type="email" class="login-field" name="email" placeholder="Email Adress" required ><br>
+    		<input type="password" class="login-field" name="password" placeholder="Password" required ><br>
     		<input type="submit" name="submit" value="Register" class="login-button">
   		<p class="login-lost">Already Registered? <a href="login.php">Login Here</a></p>
   	</form>
  
-<?php } ?>
+<?php }  ?>    
 </body>
 </html>
