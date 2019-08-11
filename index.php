@@ -1,15 +1,15 @@
 <?php
-require('db_connect.php');
-session_start();
+require('db_connect.php');   //include database connection file
+session_start();             // function to start session
 if(!isset($_SESSION["email"])){
-	header("Location: login.php");
+	header("Location: login.php");   // relocate page
 	exit(); 
 }
 $email = $_SESSION["email"];
 
-$sql1 = "SELECT * FROM users WHERE email='$email'";
+$sql1 = "SELECT * FROM users WHERE email='$email'";   // query to fetch data from database table
 $result1 = mysqli_query($con, $sql1);
-$username = mysqli_fetch_assoc($result1)['fullname'];
+$username = mysqli_fetch_assoc($result1)['fullname'];    //get fullname from array
 ?>
 <!DOCTYPE html>
 <html>
