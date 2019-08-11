@@ -1,15 +1,15 @@
 <?php
 session_start();
-if(!isset($_SESSION["fullname"])){
-	header("Location: login.php");
-	exit(); 
+if(!isset($_SESSION["fullname"])){     // check fullname is there
+	header("Location: login.php");   // redirect location
+	exit(); //end of condition
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Welcome User</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" />   //add style.css file for designing purpose
 </head>
 <body>
 <div class="welcome">
