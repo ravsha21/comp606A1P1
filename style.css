@@ -5,23 +5,35 @@ background-position: center; /* Center the image */
 background-repeat: no-repeat; /* Do not repeat the image */
 background-size: cover; /* Resize the background image to cover the entire container */
 }
-h1,h2,h3,p{
+h1,h2,h3{
 font-color:#000000;
 }
 
 .registration_form {
-    margin: 100px auto;
+    margin: 80px auto;
     width: 400px;
     padding: 30px 25px;
-    background: darkseagreen;
-    border: 1px solid #ffffff;
+    background: #526E2A;
+    border: 1px solid saddlebrown;
+}
+.form {
+    margin: 80px auto;
+    width: 400px;
+    padding: 30px 25px;
+    background: #526E2A;
+    border: 1px solid saddlebrown;
 }
 .login_form {
-    margin: 185px auto;
+    margin: 80px auto;
     width: 400px;
     padding: 30px 25px;
-    background: darkseagreen;
-    border: 1px solid #ffffff;
+    background: #526E2A;
+    border: 1px solid saddlebrown;
+}
+.welcome {
+    margin: 80px auto;
+    width: 400px;
+    padding: 30px 25px;
 }
  
 h1.login-title {
@@ -40,8 +52,50 @@ h1.login-title {
     border: 1px solid #ccc;
     border-radius: 25px;
 }
-
- 
+input.loginButton {
+    padding: 10px;
+    width: 100px;
+    background-color: #ffffff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+.login-button {
+   background-color: #fff;
+    width: 100px;
+    padding: 11px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    float: left;
+    margin: 1px 25px 1px 15px;
+} 
+ul.account_list li {
+    padding: 20px;
+    float: left;
+    text-align: center;
+    list-style: none;
+}
+p.registration-here {
+    background-color: #fff;
+    width: 85px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    float: left;
+    margin: 1px 50px 1px 50px;
+} 
+a{
+    background-color: #fff;
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
 .go-login
 {
   text-align:center;
