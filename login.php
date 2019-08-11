@@ -7,7 +7,7 @@
 <body>
 <?php
 session_start();
-require('db.php');
+require('db_connect.php');
 if (isset($_POST['fullname'])){
 	$fullname = stripslashes($_POST['fullname']);
 	$fullname = mysqli_real_escape_string($con,$fullname);
