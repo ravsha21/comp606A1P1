@@ -29,9 +29,9 @@ if (isset($_POST['email'])){   //check if fullname is there
         $query = "INSERT into users(first_name,last_name,fullname,gender,email,password, start_date)VALUES('$first_name','$last_name','$fullname','$gender','$email','".md5($password)."', '$start_date')";
         //echo $query;  
         //$results = mysqli_query($con, $query); 
-	$sql1 = "SELECT * FROM users WHERE email='$email'";
+	$sql1 = "SELECT * FROM users WHERE email='$email'";  //get data from user table to check if email exist
         $result1 = mysqli_query($con, $sql1);
-        $email = mysqli_fetch_assoc($result1)['email'];
+        $email = mysqli_fetch_assoc($result1)['email'];  //fetch email field
         
 if($email != null){
 //echo $email;
